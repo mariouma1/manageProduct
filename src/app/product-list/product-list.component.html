@@ -1,0 +1,34 @@
+<section>
+  <h1>Product Management</h1>
+
+  <div class="sub-title">Product List</div>
+
+  <div class="filter-container">
+    <h3>Filter</h3>
+    <input type="text" />
+  </div>
+  <div class="table-conatiner">
+    <table class="table" *ngIf="productList.length">
+      <tr>
+        <th>
+          <input type="button" class="blue-btn" value="Search Product" />
+        </th>
+        <th>Product</th>
+        <th>Code</th>
+        <th>Available</th>
+        <th>Price</th>
+        <th>5 Star Rating</th>
+      </tr>
+      <tr *ngFor="let product of productList">
+        <td>
+          <img src="{{ product.src }}" class="table-image avatar" />
+        </td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.id }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.available }}</td>
+        <td>{{ product.star }}</td>
+      </tr>
+    </table>
+  </div>
+</section>
